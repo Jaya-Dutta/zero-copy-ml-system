@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  ml_infrastructure:
+    build: .
+    container_name: zero-copy-ml
+    shm_size: '512m' # Explicit ShM augmentation for large tensors
+    ports:
+      - "8000:8000"
+      - "8001:8001"
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    # Ensures docker handles signal termination for our launcher cleanups
+    init: true 

@@ -1,0 +1,20 @@
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.venv/
+venv/
+env/
+ENV/
+
+# OS / Editor
+.DS_Store
+.vscode/
+.idea/
+
+# Custom ML Ignore
+ports_config.json
+worker.lock
+ml_zero_copy_shm
+*.log
